@@ -1,1 +1,9 @@
-.fs-task {}
+.fs-task {
+  padding: 20px;
+  position: absolute;
+  top:50%;
+  left: 25%;
+  z-index: 1000;
+  background-color: yellow;
+}
+
