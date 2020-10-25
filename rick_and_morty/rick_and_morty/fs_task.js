@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const tags = document.querySelectorAll('a')
     const textContainer = []
     const quantity = document.getElementById('lenthA');
-    const ul = document.querySelector('.fs-task__list');
+    const div = document.querySelector('.fs-task__link');
 
     
     tags.forEach(tag => tag.innerText && textContainer.push(tag.innerText) )
@@ -24,18 +24,23 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function updateValue(e) { // Search something
         const value = e.target.value;
+        div.innerHTML = "";
 
-        let arrayA = (find(textContainer, value))
-        // console.log(arrayA);
-        for(let item of arrayA) {
-            const p = document.createElement('p');
-            p.textContent = item;
-            ul.append(p);
+        if (value.length > 0) {
+            let arrayA = (find(textContainer, value))
+            // console.log(arrayA);
+            setTimeout(addLink, 10, arrayA);
+            let lengthA = (find(textContainer, value).length);
+            quantity.textContent = lengthA; 
+            
         }
-        console.log(arrayA);
-        
-        let lengthA = (find(textContainer, value).length);
-        quantity.textContent = lengthA;
     }
-    
+
+    function addLink(arr) {
+        for(let item of arr) {
+            const p = document.createElement('a');
+            p.textContent = item;
+            div.append(p);   
+        }
+    }
 });
