@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const textContainer = []
     const quantity = document.getElementById('lenthA');
     const ul = document.querySelector('.fs-task__list');
-    
+
     
     tags.forEach(tag => tag.innerText && textContainer.push(tag.innerText) )
     // console.log(textContainer);
@@ -25,17 +25,17 @@ document.addEventListener("DOMContentLoaded", function(){
     function updateValue(e) { // Search something
         const value = e.target.value;
 
-            let arrayA = (find(textContainer, value))
-
-            for(let item of arrayA) {
-                const p = document.createElement('p');
-                p.textContent = item;
-                ul.append(p);
-            }
-            
-    
-            let lengthA = (find(textContainer, value).length);
-            quantity.textContent = lengthA;
+        let arrayA = (find(textContainer, value))
+        // console.log(arrayA);
+        for(let item of arrayA) {
+            const p = document.createElement('p');
+            p.textContent = item;
+            ul.append(p);
+        }
+        console.log(arrayA);
+        
+        let lengthA = (find(textContainer, value).length);
+        quantity.textContent = lengthA;
     }
     
 });

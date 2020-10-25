@@ -1,9 +1,12 @@
 .fs-task {
-  padding: 20px;
+  padding: 25px;
   position: absolute;
-  top:50%;
-  left: 25%;
+  top: 3vh;
+  left: 18vw;
   z-index: 1000;
-  background-color: yellow;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  max-width: 800px;
 }
 
